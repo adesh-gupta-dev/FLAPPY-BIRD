@@ -1,54 +1,81 @@
-# FLAPPY-BIRD-GAME
- 
+# FLAPPY_BIRD
 
 A simple C/C++ game built using raylib and Visual Studio.
 
-Getting Started
+## Getting Started
 
-Follow the steps below to set up your environment and run the project.
+Follow these steps to set up the development environment and run the project.
 
-1. Clone vcpkg (C++ package manager)
+### Prerequisites
+
+- Git installed.
+
+- Visual Studio with C++ development workload.
+
+- (Optional) CMake if the project uses it, but maybe not needed here.
+
+But since the user didn't include prerequisites, maybe skip. Proceed with the steps as given.
+
+Convert each step into markdown. For example:
+
+1. **Clone vcpkg**
+
+```bash
 
 git clone https://github.com/Microsoft/vcpkg.git
+
 cd vcpkg
+
 bootstrap-vcpkg.bat
 
-2. Integrate vcpkg with Visual Studio
+```
+2. **Integrate vcpkg with Visual Studio**
+```bash
+.\vcpkg integrate install
+```
+This makes vcpkg packages automatically available in Visual Studio projects.
 
-vcpkg integrate install
+3. **Install raylib**
+For x64 builds (recommended):
 
-This command makes vcpkg automatically available in all your Visual Studio projects.
+```bash
+.\vcpkg install raylib:x64-windows
+```
+For 32-bit (x86) builds:
 
-3. Install raylib using vcpkg
+```bash
+.\vcpkg install raylib:x86-windows
+```
+4. ***Open the Project in Visual Studio***
 
-vcpkg install raylib
+*Launch Visual Studio.*
 
-Note: If you target x64, specify the triplet:
+*Open the project folder containing your .sln or .vcxproj file.*
 
-vcpkg install raylib:x64-windows
+*Set the Solution Platform to x64 (via the dropdown at the top).*
 
-4. Open the Project in Visual Studio
+5.****Build and Run****
+Debug Mode: Press F5 to build and debug.
 
-Open Visual Studio.
-
-Open your ${game} project folder (where your .sln or .vcxproj is located).
-
-Ensure the solution platform is set to x64.
-
-5. Build and Run
-
-Press F5 to build and run with debugging.
-
-Press Ctrl+F5 to run without debugging.
+Run Without Debugging: Press Ctrl + F5.
 
 Troubleshooting
+Headers Not Found
 
-If raylib headers aren’t found, verify vcpkg install raylib completed successfully.
+### Ensure 
+```
+vcpkg install raylib:x64-windows 
+```
+completed successfully.
 
-If linker errors occur, confirm the platform is set to x64 and re-run:
+Rebuild the project after installation.
 
-vcpkg integrate install
+Linker Errors
+Confirm the Solution Platform is set to x64.
 
-License
+Re-run:
 
-This project is open source under the MIT License.
+```bash
+
+.\vcpkg integrate install
+```
